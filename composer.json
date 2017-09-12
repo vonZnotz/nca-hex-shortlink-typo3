@@ -1,0 +1,6 @@
+{
+	"name": "nca/shortlink-typo3",
+	"require": {
+		"typo3/cms": "^8.7"
+	}
+}
