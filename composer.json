@@ -1,6 +1,12 @@
 {
 	"name": "nca/shortlink-typo3",
 	"require": {
+		"php": ">=7.1",
 		"typo3/cms": "^8.7"
+	},
+	"autoload": {
+		"psr-4": {
+			"Nca\\ShortlinkTypo3\\": "src/"
+		}
 	}
 }

@@ -1,11 +1,12 @@
 <?php
 
-namespace Nca\Shortlink\Matcher;
+namespace Nca\ShortlinkTypo3\Resolver;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Types\Type;
+use Nca\Shortlink\Resolver\ResolverInterface;
 
-class DatabaseMatcher implements MatcherInterface
+class DatabaseResolver implements ResolverInterface
 {
     const DEFAULT_TABLE_NAME = 'table';
     const DEFAULT_SOURCE_COLUMN_NAME = 'source';
@@ -35,7 +36,7 @@ class DatabaseMatcher implements MatcherInterface
         $this->destinationColumnName = $destinationColumnName;
     }
 
-    public function match(string $source): ?string
+    public function resolve(string $source): ?string
     {
         $expr = $this->connection->getExpressionBuilder();
         $destination = $this->connection->createQueryBuilder()
